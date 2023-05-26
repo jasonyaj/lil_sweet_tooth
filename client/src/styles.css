@@ -1,0 +1,137 @@
+/* body, app-wrapper, and footer is used to place footer at the bottom */
+body {
+  height: 100%;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 87vh;
+}
+
+footer {
+  margin-top: auto;
+}
+
+/* Container and border styling */
+/* login and registration container and border */
+.log-reg-form {
+  width: 600px;
+  padding: 40px 80px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+/* contact form container at HomePage */
+.contact-form {
+  padding: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+@media (min-width: 600px) {
+  .contact-form {
+    width: 600px;
+  }
+}
+
+@media (min-width: 900px) {
+  .contact-form {
+    width: 800px;
+  }
+}
+
+/* add product form container */
+.add-form {
+  padding: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+@media (min-width: 600px) {
+  .add-form {
+    width: 600px;
+  }
+}
+
+@media (min-width: 900px) {
+  .add-form {
+    width: 900px;
+  }
+}
+
+/* container and border at ViewCart */
+.cart {
+  padding: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+@media (min-width: 600px) {
+  .cart {
+    width: 600px;
+  }
+}
+
+@media (min-width: 900px) {
+  .cart {
+    width: 800px;
+    min-height: 550px;
+  }
+}
+
+/* animation section */
+/* rotate logo in login route */
+.rotate-animation {
+  animation: rotate 3s infinite alternate;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+
+/* twist logo in registration route */
+.twist-animation {
+  animation: twist 4s infinite linear;
+  perspective: 1000px; /*this creates a sense of depth during rotation*/
+}
+
+@keyframes twist {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+/* use for navbar text color setting */
+.nav-links .nav-link {
+  color: white;
+}
+
+/* set width of buttons in admin Home */
+.width-button {
+  min-width: 115px;
+}
+
+/* center the component to the center of the screen */
+.centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+}
+
+.textarea {
+  resize: none;
+}
