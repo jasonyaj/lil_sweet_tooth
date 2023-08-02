@@ -27,6 +27,19 @@ async function getOne(req, res) {
   }
 }
 
+// // READ BY CATEGORY
+async function getByCategory(req, res) {
+  try {
+    const product = await Product.find({ category: req.params.category });
+    if (product) {
+      return res.status(200).json(product);
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(400).json(error);
+  }
+}
+
 // // CREATE
 async function create(req, res) {
   try {
@@ -40,7 +53,7 @@ async function create(req, res) {
   }
 }
 
-export { getAll, getOne, create };
+export { getAll, getOne, getByCategory, create };
 // // UPDATE
 // module.exports.update = (req, res) => {
 //   Product.findOneAndUpdate({ _id: req.params.id }, req.body, {

@@ -12,6 +12,7 @@ import AddProduct from "./components/admin/AddProduct";
 import UpdateProduct from "./components/admin/UpdateProduct";
 import Inventory from "./components/admin/Inventory";
 import Orders from "./components/admin/Orders";
+import Success from "./components/user/Success";
 
 function App() {
   // array of dummy "cart" objects, replicates cart db, DELETE LATER AFTER DB IS SETUP
@@ -78,7 +79,8 @@ function App() {
               />
             }
           />
-          Admin routes
+          <Route path="/success" element={<Success />} />
+          {/* Admin routes */}
           <Route path="/admin" element={<Home />} />
           <Route path="/admin/product/new" element={<AddProduct />} />
           <Route path="/admin/product/update" element={<UpdateProduct />} />

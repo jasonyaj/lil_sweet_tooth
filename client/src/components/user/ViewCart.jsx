@@ -41,6 +41,8 @@ const ViewCart = ({ cart, setCart, removeFromDom }) => {
     );
   };
 
+  let totalPrice = 0;
+
   return (
     <div>
       {/* Navigation Bar */}
@@ -93,6 +95,7 @@ const ViewCart = ({ cart, setCart, removeFromDom }) => {
           </thead>
           <tbody>
             {cart.map((item) => {
+              totalPrice += item.product.price * item.product_qty;
               return (
                 <tr key={item._id}>
                   <td>
@@ -140,20 +143,22 @@ const ViewCart = ({ cart, setCart, removeFromDom }) => {
         <div>
           <p className="d-flex justify-content-end">
             <span className="fs-6 fw-bold me-2">Tax:</span>
-            7.25
+            GOV'T FREE
           </p>
         </div>
         <hr />
         <div>
           <p className="d-flex justify-content-end fs-4">
-            <span className="fw-bold me-2">Total:</span> $500
+            <span className="fw-bold me-2">Total:</span> ${totalPrice}
           </p>
         </div>
         <div className="d-flex justify-content-end mt-5">
           <Link className="text-info me-4" to="/shop">
             Continue Shopping
           </Link>
-          <Button className="btn-dark">Checkout</Button>
+          <Button className="btn-dark" href="/success">
+            Checkout
+          </Button>
         </div>
       </div>
     </div>

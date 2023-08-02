@@ -1,10 +1,16 @@
 import { Router } from "express";
-import { getAll, getOne, create } from "../controllers/product.controller.js";
+import {
+  getAll,
+  getOne,
+  getByCategory,
+  create,
+} from "../controllers/product.controller.js";
 
 const router = Router();
 
 router.get("/products", getAll);
 router.get("/products/:id", getOne);
+router.get("/products/filter/:category", getByCategory);
 router.post("/products", create);
 
 // module.exports = (app) => {
